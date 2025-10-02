@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Endereço com Validação JS/Regex</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        form { max-width: 400px; margin: 0 auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        div { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="number"] { width: 100%; padding: 8px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 4px; }
+        button { padding: 10px 15px; background-color: #2c0e4e; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background-color: #232427; }
+        label::after { content: '*'; color: red; margin-left: 5px; }
+        #complemento-group label::after { content: ''; } 
+    </style>
+</head>
+<body>
+
+    <h1>Cadastro de Endereço</h1>
+
+    <form id="form-endereco">
+        
+        <div>
+            <label for="cep">CEP</label>
+            <input type="text" id="cep" name="cep" maxlength="9" placeholder="00000-000">
+        </div>
+
+        <div>
+            <label for="logradouro">Logradouro</label>
+            <input type="text" id="logradouro" name="logradouro" minlength="5" placeholder="Rua, Avenida, etc.">
+        </div>
+
+        <div>
+            <label for="numero">Número</label>
+            <input type="text" id="numero" name="numero" inputmode="numeric" placeholder="Apenas dígitos">
+        </div>
+
+        <div>
+            <label for="uf">UF</label>
+            <input type="text" id="uf" name="uf" maxlength="2" placeholder="Ex: SP">
+        </div>
+
+        <div id="complemento-group">
+            <label for="complemento">Complemento (Opcional)</label>
+            <input type="text" id="complemento" name="complemento" placeholder="Apartamento, Bloco, etc.">
+        </div>
+
+        <button type="submit">Cadastrar Endereço</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
